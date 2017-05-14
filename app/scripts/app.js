@@ -4,15 +4,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import AppRoot from "./components/app_root.js";
-import About from "./components/about.js";
-import Contact from "./components/contact.js";
+import AllItems from "./components/all_items.js";
+import CartItems from "./components/cart_items.js";
+import ItemDetail from "./components/item_detail.js";
 
-const Nav = () => (
-  <nav>
-    <li><Link to="/about">About</Link></li>
-    <li><Link to="/contact-us">Contact</Link></li>
-  </nav>
-);
 
 export default function app() {
   render(
@@ -20,9 +15,10 @@ export default function app() {
       <Router>
         <div>
           <Nav />
-          <Route exact path="/" component={AppRoot} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact-us" component={Contact} />
+            <Route path="/" component={AppRoot} />
+            <Route path="/all_items" component={AllItems} />
+            <Route path="/cart_items" component={CartItems} />
+            <Route path="/item/:id" component={ItemDetail} />
         </div>
       </Router>
     </Provider>,

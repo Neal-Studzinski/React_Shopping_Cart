@@ -14,7 +14,6 @@ export default function app() {
     <Provider store={store}>
       <Router>
         <div>
-          <Nav />
             <Route path="/" component={AppRoot} />
             <Route path="/all_items" component={AllItems} />
             <Route path="/cart_items" component={CartItems} />

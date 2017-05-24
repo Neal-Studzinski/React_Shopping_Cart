@@ -8,19 +8,19 @@ import AllItems from "./components/all_items.js";
 import CartItems from "./components/cart_items.js";
 import ItemDetail from "./components/item_detail.js";
 
-
 export default function app() {
-  render(
-    <Provider store={store}>
-      <Router>
-        <div>
-            <Route path="/" component={AppRoot} />
-            <Route path="/all_items" component={AllItems} />
-            <Route path="/cart_items" component={CartItems} />
-            <Route path="/item/:id" component={ItemDetail} />
-        </div>
-      </Router>
-    </Provider>,
-    document.getElementById("app")
-  );
+    render(
+        <Provider store={store}>
+            <Router>
+                <div>
+                    <Route path="/" component={AppRoot} />
+                    <Route path="/all_items" component={AllItems} />
+                    <Route path="/cart_items" component={CartItems} />
+                    <Route path="/item/:id" component={ItemDetail} />
+
+                </div>
+            </Router>
+        </Provider>,
+        document.getElementById("app")
+    );
 }

@@ -6,13 +6,14 @@ import loadItems from "../actions/load_items.js";
 
 const NavBar = () => {
     return (
-            <nav>
-                <NavLink to="/all_items">All Items</NavLink>
-                <br />
-                <NavLink to="/cart_items">Checkout</NavLink>
-            </nav>
-        );
-    };
+        <nav>
+            <NavLink to="/all_items">All Items</NavLink>
+            <br />
+            <NavLink to="/cart_items">Checkout</NavLink>
+
+        </nav>
+    );
+};
 
 class AppRoot extends React.Component {
     constructor(props) {
@@ -21,11 +22,11 @@ class AppRoot extends React.Component {
 
     render() {
         return (
-                <div>
-                    <NavBar />
-                </div>
-            );
-        }
+            <div>
+                <NavBar />
+            </div>
+        );
     }
+}
 
 export default connect(container.allState)(AppRoot);

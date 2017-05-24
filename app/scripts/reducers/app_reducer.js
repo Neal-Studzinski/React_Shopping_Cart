@@ -3,7 +3,8 @@
 //handle a custom action through which one could add a new item to it
 //handle a custom action through which one could remove an item from it
 //have a custom function that calculates the total based on the items currently in the cart
-import utils from '../utils.js';
+import utils from "../utils.js";
+import React from "react";
 
 export default function AppReducer(currentState, action) {
     const newState = utils.newState(currentState);
@@ -25,22 +26,25 @@ export default function AppReducer(currentState, action) {
         case "LOAD_ITEMS":
             let newTotal = 0;
             let items = action.items.map(item => {
-            newTotal += item.item.price;
-            return item.item;
+                newTotal += item.item.price;
+                return item.item;
             });
             return newState({
                 cartItems: items,
                 total: parseFloat(newTotal).toFixed(2)
-                     });
+            });
 
         case "ADD_ITEM":
             var total = parseFloat(currentState.total);
             var newTotal = (total + action.item.price).toFixed(2);
             var myItems = currentState.cartItems.slice();
+
             myItems.push(action.item);
+
             return newState({
                 cartItems: myItems,
-                total: newTotal });
+                total: newTotal
+            });
 
         case "REMOVE_ITEM":
             var total = parseFloat(currentState.total);
@@ -50,7 +54,8 @@ export default function AppReducer(currentState, action) {
             myItems.splice(deletedItem, 1);
             return newState({
                 cartItems: myItems,
-                total: newTotal });
-      }
-      return currentState;
+                total: newTotal
+            });
+    }
+    return currentState;
 }

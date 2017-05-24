@@ -18,3 +18,31 @@ html {
 .active {
     font-weight: bold;
 }
+
+.display {
+    display: block;
+    margin-left: 10%;
+    //justify-content: center;
+    //border: 1px solid black;
+    //text-align: center;
+    //float: right;
+}
+.total {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid grey;
+}
+
+.item-add {
+    margin-left: 10%;
+}
+
+nav {
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.load {
+    margin-left: 5%;
+}

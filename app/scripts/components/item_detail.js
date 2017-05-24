@@ -7,11 +7,11 @@ const ItemDetail = ({ items, match }) => {
     })[0];
 
     return (
-            <div>
-                <h1> {currentItem.item} </h1>
-                <h3> ${currentItem.price} </h3>
-            </div>
-        );
+        <div>
+            <h1> {currentItem.item} </h1><br />
+            <h3> ${currentItem.price} </h3>
+        </div>
+    );
 };
 
-//export default connect(state => state)(ItemDetail);
+export default connect(state => state)(ItemDetail);

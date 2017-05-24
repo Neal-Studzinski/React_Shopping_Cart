@@ -7,6 +7,6 @@ export default function loadItems() {
         }).then(response => {
             console.log(response);
             dispatch({ type: "LOAD_ITEMS", items: response });
-            });
-        };
+        });
+    };
 }

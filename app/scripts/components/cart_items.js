@@ -33,7 +33,6 @@ const CartItems = ({ cartItems, total, history, dispatch, match }) => {
             <div className="total">
                 Total: ${total}
 
-                <button className="load" onClick={load}>Load Items</button>
                 <button className="load" onClick={save}>Save Cart</button>
             </div>
             <ul className="display">
